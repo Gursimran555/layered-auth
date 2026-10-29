@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layered-auth"
+version = "0.2.0"
+description = "Password + second factor (OTP/TOTP) + revocable JWT, with an attack script that tests every layer"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Gursimran Singh"}]
+requires-python = ">=3.10"
+dependencies = ["bcrypt>=4.1", "PyJWT>=2.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["layered_auth"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
